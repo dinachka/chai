@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
     });
   } catch (err) {
     res.json({ isUser: false, message: 'Пользователь с именем не существует. Пройдите регистрацию' });
-  };
+  }
 
   let isPassword;
   try {

@@ -1,13 +1,13 @@
-// const loginBtn = document.querySelector('#loginBtn');
+const userMessage = document.querySelector('.response');
 
 document.loginForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
-
   const form = event.target;
   const body = {
     username: form.username.value,
     password: form.password.value,
   };
+
   const options = {
     method: 'POST',
     body: JSON.stringify(body),
@@ -18,8 +18,8 @@ document.loginForm?.addEventListener('submit', async (event) => {
 
   const response = await fetch('/login', options);
   const data = await response.json();
+  
 
-  const userMessage = document.querySelector('.response');
   if (data.isUser && data.isPassword) {
     userMessage.innerText = 'Вы вошли успешно';
     setTimeout(() => {
