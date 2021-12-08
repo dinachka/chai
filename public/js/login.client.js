@@ -20,9 +20,12 @@ document.loginForm?.addEventListener('submit', async (event) => {
   const data = await response.json();
 
   const userMessage = document.querySelector('.response');
-  if(data) {
+  if (data.isUser && data.isPassword) {
     userMessage.innerText = 'Вы вошли успешно';
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 2000);
   } else {
     userMessage.innerText = data.message;
   }
-})
+});
