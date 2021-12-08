@@ -36,8 +36,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 const indexRouter = require('./routes/index');
 const articleRouter = require('./routes/article');
 const welcomeRouter = require('./routes/welcome');
+const profileRouter = require('./routes/profile');
+const registrationRouter = require('./routes/registration');
+const loginRouter = require('./routes/login');
 // const Router = require('./routes/');
 
 app.use('/home', indexRouter);
 app.use('/article', articleRouter);
 app.use('/', welcomeRouter);
+app.use('/profile', profileRouter);
+app.use('/registration', registrationRouter);
+app.use('/login', loginRouter);
