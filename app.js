@@ -10,6 +10,11 @@ const app = express();
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
+app.listen(PORT, () => {
+  console.log('Сервер работает :)', PORT);
+});
+
+
 const sessionConfig = {
   store: new SessionFileStore(),
   name: 'user_sid',
@@ -27,3 +32,12 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true })); // for req.body
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+
+const indexRouter = require('./routes/index');
+const articleRouter = require('./routes/article');
+const welcomeRouter = require('./routes/welcome');
+// const Router = require('./routes/');
+
+app.use('/home', indexRouter);
+app.use('/article', articleRouter);
+app.use('/', welcomeRouter);
