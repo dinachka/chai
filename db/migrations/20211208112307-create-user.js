@@ -24,8 +24,7 @@ module.exports = {
       },
       role: {
         type: Sequelize.TEXT,
-        allowNull:false,
-        unique:true,
+        allowNull:true,
       },
       createdAt: {
         allowNull: false,
