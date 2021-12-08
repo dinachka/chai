@@ -1,4 +1,17 @@
 .border_box {
   display: grid;
-  grid-template-columns: 2fr 8fr;
+  grid-template-columns: 2fr 8fr 2fr;
+}
+
+.login_box,
+.registration_box {
+  /* padding: 20% 20% 0 20%; */
+  /* height: 100%; */
+
+}
+
+.login_box_form,
+.registration_box_form {
+  display: flex;
+  flex-direction: column;
 }
