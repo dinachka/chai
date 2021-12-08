@@ -39,6 +39,7 @@ const welcomeRouter = require('./routes/welcome');
 const profileRouter = require('./routes/profile');
 const registrationRouter = require('./routes/registration');
 const loginRouter = require('./routes/login');
+const logoutLink = require('./routes/logout');
 // const Router = require('./routes/');
 
 app.use('/home', indexRouter);
@@ -47,3 +48,4 @@ app.use('/', welcomeRouter);
 app.use('/profile', profileRouter);
 app.use('/registration', registrationRouter);
 app.use('/login', loginRouter);
+app.use('/logout', logoutLink);

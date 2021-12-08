@@ -1,11 +1,12 @@
 <div class="login_box">
-  <form action="/login" name="loginForm" method="post">
-    <label for="userName"><b>Логин: </b></label>
+  <form action="/login" name="loginForm" method="post" class="login_box_form">
+    <label for="userName">Логин: </label>
     <input type="text" placeholder="Enter Username" name="username" id="userName">
 
-    <label for="userPassword"><b>Пароль:</b></label>
+    <label for="userPassword">Пароль: </label>
     <input type="password" placeholder="Enter Password" name="password" id="userPassword">
 
-    <button type="submit">Войти</button>
+    <button type="submit" id="loginBtn">Войти</button>
   </form>
+  <div class="response"></div>
 </div>
