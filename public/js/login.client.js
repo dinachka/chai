@@ -5,7 +5,7 @@ document.loginForm?.addEventListener('submit', async (event) => {
 
   const form = event.target;
   const body = {
-    login: form.login.value,
+    username: form.username.value,
     password: form.password.value,
   };
   const options = {
