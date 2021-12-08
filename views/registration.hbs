@@ -1,5 +1,5 @@
 <div class="registration_box">
-  <form action="/registration" name="registrationForm" method="post">
+  <form action="/registration" name="registrationForm" method="post" class="registration_box_form">
     <label for="userName">Логин: </label>
     <input required type="text" placeholder="Введи свой логин" id="userName" name="username">
 
@@ -12,14 +12,14 @@
     <label for="checkUserPassword">Password: </label>
     <input type="password" placeholder="Повторите пароль" id="checkUserPassword" name="checkUserPassword">
 
-{{!-- <div class="form-group">
-    <label for="role">Выберите между администратором и пользователем:
-      <select id="role" class="form-control" name="role" required>
-        <option value="admin">Администратор</option>
-        <option value="user">Пользователь</option><br>
-      </select>
-    </label>
-  </div> --}}
+    {{!-- <div class="form-group">
+      <label for="role">Выберите между администратором и пользователем:
+        <select id="role" class="form-control" name="role" required>
+          <option value="admin">Администратор</option>
+          <option value="user">Пользователь</option><br>
+        </select>
+      </label>
+    </div> --}}
     <button type="submit">Отправить!</button>
   </form>
 </div>
