@@ -11,6 +11,7 @@
   <script src="/js/client.js" defer></script>
   <script src="/js/registration.client.js" defer></script>
   <script src="/js/login.client.js" defer></script>
+  <script src="/js/logout.client.js" defer></script>
   <title>{{title}}</title>
 </head>
 
@@ -27,7 +28,7 @@
               </span>
             </a>
           </li>
-
+          {{#if user.isSession}}
           <li>
             <a href="/profile">
               <i class="fa fa-home fa-2x"></i>
@@ -38,26 +39,25 @@
           </li>
 
         </ul>
+        <li>
+          <a href="/logout" id="logout-link">
+            <i class="fa fa-power-off fa-2x"></i>
+            <span class="nav-text">Logout</span></a>
+        </li>
+        <li>
+          {{else}}
+          <a href="/registration">
+            <i class="fa fa-home fa-2x"></i>
+            <span class="nav-text">Регистрация</span></a>
+        </li>
 
-        <ul class="logout">
-          <li>
-            <a href="/registration">
-              <i class="fa fa-home fa-2x"></i>
-              <span class="nav-text">Регистрация</span></a>
-          </li>
-
-          <li>
-            <a href="/login">
-              <i class="fa fa-home fa-2x"></i>
-              <span class="nav-text">Войти</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="">
-              <i class="fa fa-power-off fa-2x"></i>
-              <span class="nav-text">Logout</span></a>
-          </li>
+        <li>
+          <a href="/login">
+            <i class="fa fa-home fa-2x"></i>
+            <span class="nav-text">Войти</span>
+          </a>
+        </li>
+        {{/if}}
         </ul>
       </nav>
     </div>

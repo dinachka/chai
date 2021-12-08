@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
 router.post('/', async (req, res) => {
   const { username, password } = req.body;
   let isUser;
+  let isPassword;
   try {
     isUser = await User.findOne({
       where: {
@@ -20,16 +21,34 @@ router.post('/', async (req, res) => {
       raw: true,
     });
   } catch (err) {
-    res.json({ isUser: false, message: 'Пользователь с именем не существует. Пройдите регистрацию' });
+    return res.json({ login: false, message: 'Пользователь с именем не существует. Пройдите регистрацию', path: '/login' });
   }
 
-  let isPassword;
   try {
-    if (isUser) {
-      isPassword = await bcrypt.compare(password, isUser.password);
-    }
+    // if (isUser) {
+    isPassword = await bcrypt.compare(password, isUser.password);
+    // }
   } catch (err) {
-    res.json({ isPassword: false, message: 'Ваш пароль неверный' });
+    return res.json({ login: false, message: 'Ваш пароль неверный' });
+  }
+
+  if (!isPassword) {
+    return res.json({ login: false, message: 'incorrect password' });
+  }
+
+  if (isUser && isPassword) {
+    req.session.user = {
+      id: isUser.id,
+      username: isUser.username,
+      email: isUser.email,
+      isSession: true,
+    };
+    return res
+      .status(200)
+      .json({
+        login: true,
+        message: 'Успешный вход',
+      });
   }
 });
 
