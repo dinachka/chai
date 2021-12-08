@@ -7,16 +7,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/normalize.css">
   <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/navstyle.css">
   <script src="/js/client.js" defer></script>
   <title>{{title}}</title>
 </head>
 
 <body>
-  <div class="container_nav">
-    {{!-- здесь будет навигация --}}
-  </div>
-  <div class="container">
-    {{{body}}}
+  <div class="border_box">
+    <div class="container_nav">
+      <nav class="main-menu">
+        <ul>
+          <li>
+            <a href="/home">
+              <i class="fa fa-home fa-2x"></i>
+              <span class="nav-text">
+                Главная
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/profile">
+              <i class="fa fa-home fa-2x"></i>
+              <span class="nav-text">
+                Личный кабинет
+              </span>
+            </a>
+          </li>
+
+        </ul>
+
+        <ul class="logout">
+          <li>
+            <a href="/registration">
+              <i class="fa fa-home fa-2x"></i>
+              <span class="nav-text">Регистрация</span></a>
+          </li>
+
+          <li>
+            <a href="/login">
+              <i class="fa fa-home fa-2x"></i>
+              <span class="nav-text">Войти</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+              <i class="fa fa-power-off fa-2x"></i>
+              <span class="nav-text">Logout</span></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container_body">
+      {{{body}}}
+    </div>
   </div>
 </body>
 
