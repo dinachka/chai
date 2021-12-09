@@ -1,57 +1,56 @@
- 
- {{#if isAdmin}}
-  <div id="chai-name-container">
+{{!-- {{#if isAdmin}} --}}
+<div id="chai-name-container">
 
-    {{#each chai}}
+  {{#each chai}}
 
-    <div class="card">
-      {{!-- <img src="..." class="card-img-top" alt="..."> --}}
-      <div class="card-body">
-        <h5 class="card-title">{{this.title}}</h5>
-      </div>
-      <div class="card-body">
-        <button data-delBtn_id="{{this.id}}" class="deleteBtn btn btn-outline-danger" type="button">Удалить</button>
-      </div>
+  <div class="card">
+    {{!-- <img src="..." class="card-img-top" alt="..."> --}}
+    <div class="card-body">
+      <h5 class="card-title">{{this.title}}</h5>
     </div>
-
-    {{/each}}
-
+    <div class="card-body">
+      <button data-delBtn_id="{{this.id}}" class="deleteBtn btn btn-outline-danger" type="button">Удалить</button>
+    </div>
   </div>
 
-  {{else}}
+  {{/each}}
 
- <h2 style="text-align: center;"><i>Личный кабинет администратора</i></h2>
+</div>
+
+
+
+<h2 style="text-align: center;">Личный кабинет администратора</h2>
 <div class="profile-container">
- <form name="add-article" class="items-form" action="/add-article" method="POST"
-        <div class="form-row" style="margin-left: 30%; margin-bottom: 5%;">
-          <div class="form-group col-md-6">
-            <label for="inputItem">Название</label>
-            <input type="text" name="itemname" class="form-control" id="inputItem" />
-          </div>
-          <div class="form-group col-md-6">
-            <label for="location">Место культивации</label>
-            <select id="selectCond" name="itemcondition" class="form-control">
-              <option selected>Choose...</option>
-              <option value="bad">Bad</option>
-              <option value="good">Good</option>
-              <option value="excellent">Excellent</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputStartAt">Фото</label>
-            <input type="date" name="startat" class="form-control" id="inputStartAt" />
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputEndAt">Описание</label>
-            <input type="date" name="endat" class="form-control" id="inputEndAt" />
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Добавить чай на карту</button>
-      </form>
+  <form name="addArticle" id="addArticle" class="items-form" action="/profile" method="POST" <div class="form-row"
+    style="margin-left: 30%; margin-bottom: 5%;">
+    <div class="form-group col-md-6">
+      <label for="title">Название</label>
+      <input type="text" name="title" class="form-control" id="title" />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="location">Место культивации</label><br>
+            <label for="location"> Широта<input type="text" name="latitude"></input></label>
+            <label for="location"> Долгота<input type="text" name="longitude"></input></label>
 
- <h2 style="text-align: center;"><i>Личный кабинет пользователя</i></h2>
+    <div id="map" style="width: 600px; height: 400px"></div>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=669f694a-7b76-4f0c-8c75-982434ccfb54&lang=ru_RU" type="text/javascript"></script>
+    </div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="image">Фото</label>
+    <input type="file" name="image" class="form-control" id="image" />
+  </div>
+  <div class="form-group col-md-6">
+    <label for="description">Описание</label>
+    <input type="text" name="description" class="form-control" id="description" />
+  </div>
+</div>
+<button type="submit" class="btn btn-primary">Добавить чай на карту</button>
+</form>
+
+{{!-- {{else}} --}}
+<h2 style="text-align: center;">Личный кабинет пользователя</h2>
 <div class="profile-container">
   {{!-- <div id="userData">
     <p>Имя пользователя: <b>{{customer.username}}</b></p>
@@ -61,8 +60,11 @@
   </div> --}}
   <div id="comments">
     <p>{{#each comments}}</p>
+    {{this.text}}
+    {{/each}}
   </div>
-
-  {{/if}}
-  
 </div>
+</div>
+
+   
+{{!-- {{/if}} --}}

@@ -50,8 +50,10 @@ app.use('/registration', registrationRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutLink);
 
+
 // req.session.user.isSession
 
 // app.get('/', (req, res) => {
 //   res.locals.isSession = req.session.user.isSession;
 // });
+
