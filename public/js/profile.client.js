@@ -1,6 +1,6 @@
-const addArticleForm = document.getElementById('.addArticle');
+const addArticleForm = document.getElementById('addArticle');
 console.log(addArticleForm);
-addArticleForm.addEventListener('submit', async (event) => {
+addArticleForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
   const {
     title, latitude, longitude, description, image, method, action,
@@ -20,6 +20,7 @@ addArticleForm.addEventListener('submit', async (event) => {
     }),
   });
   const jsonData = await response.json();
+  console.log(jsonData);
   if (jsonData.chaiAdded) {
     alert(jsonData.message);
     window.location.href = '/';
