@@ -1,22 +1,4 @@
-const checkbox = document.getElementById('isAdmin');
-
-checkbox.addEventListener('click', (event) => {
-  const label = document.createElement('label');
-  label.innerText = 'Введите ключевое слово';
-  label.for = 'keyWord';
-
-  const input = document.createElement('input');
-  input.id = 'keyWord';
-  input.type = 'text';
-  input.name = 'keyword';
-
-  const adminbox = document.getElementById('admin_reg');
-  adminbox.appendChild(label);
-  adminbox.appendChild(input);
-  // document.body.appendChild(input);
-});
-
-// const userMessage = document.querySelector('.response');
+const userMessage = document.querySelector('.response');
 
 document.loginForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -39,17 +21,11 @@ document.loginForm?.addEventListener('submit', async (event) => {
   console.log(data);
 
   if (data.login) {
-  // {
-  //   userMessage.innerText = 'Вы вошли успешно';
-  //   setTimeout(() => {
-  //     window.location.href = '/';
-  //   }, 2000);
-  // } else {
-  //   userMessage.innerText = data.message;
-  // }
-    alert(data.message);
-    window.location.href = '/';
+    userMessage.innerText = 'Вы вошли успешно';
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 2000);
   } else {
-    alert(data.message);
+    userMessage.innerText = data.message;
   }
 });

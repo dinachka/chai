@@ -1,19 +1,18 @@
 .border_box {
   display: grid;
-  grid-template-columns: 2fr 8fr 2fr;
+  grid-template-columns: 3fr 8fr 2fr;
 }
 
 .login_box,
 .registration_box {
-  /* padding: 20% 20% 0 20%; */
-  /* height: 100%; */
+  margin-top: 20%;
 
 }
 
 .login_box_form,
 .registration_box_form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 2fr 5fr;
 }
 
 /* .isAdmin {
