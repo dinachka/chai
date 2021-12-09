@@ -1,19 +1,22 @@
-/* <script type="text/javascript">
-    ymaps.ready(init);
-    function init(){
-        // Создание карты.
-        const myMap = new ymaps.Map("map", {
-            // Координаты центра карты.
-            // Порядок по умолчанию: «широта, долгота».
-            // Чтобы не определять координаты центра карты вручную,
-            // воспользуйтесь инструментом Определение координат.
-            center: [55.76, 37.64],
-            // Уровень масштабирования. Допустимые значения:
-            // от 0 (весь мир) до 19.
-            zoom: 7
-        });
-    }
-</script> */
+const arrGlobalCoordinates = [];
+
+window.addEventListener('load', async (event) => {
+  const response = await fetch('http://localhost:3000/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  const data = await response.json();
+  console.log(data);
+  data.coordinates.forEach((element) => {
+    const obj = {};
+    obj.coords = [+element.latitude, +element.longitude];
+    arrGlobalCoordinates.push(obj);
+  });
+  console.log(arrGlobalCoordinates);
+});
+
 
 ymaps.ready(init);
 function init() {
@@ -62,3 +65,4 @@ function init() {
     document.addArticle.longitude.value = clickCoords[1];
   });
 };
+
