@@ -12,18 +12,18 @@ module.exports = (sequelize, DataTypes) => {
     static associate({ Comments, Chai }) {
       // define association here
       User.hasMany(Comments, {
-        foreignKey: 'userId'
+        foreignKey: 'userId',
       }),
       User.hasMany(Chai, {
-        foreignKey: 'userId'
-      })
+        foreignKey: 'userId',
+      });
     }
   }
   User.init({
     username: DataTypes.TEXT,
     email: DataTypes.TEXT,
     password: DataTypes.TEXT,
-    role: DataTypes.TEXT,
+    isAdmin: DataTypes.TEXT,
   }, {
     sequelize,
     modelName: 'User',
