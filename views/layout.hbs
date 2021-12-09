@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="/styles/normalize.css">
   <link rel="stylesheet" href="/styles/style.css">
   <link rel="stylesheet" href="/styles/navstyle.css">
@@ -43,23 +44,23 @@
               <i class="fa fa-power-off fa-2x"></i>
               <span class="nav-text">Logout</span></a>
           </li>
-          {{!--
-        </ul> --}}
-        {{else}}
-        <li>
-          <a href="/registration">
-            <i class="fa fa-home fa-2x"></i>
-            <span class="nav-text">Регистрация</span></a>
-        </li>
-
-        <li>
-          <a href="/login">
-            <i class="fa fa-home fa-2x"></i>
-            <span class="nav-text">Войти</span>
-          </a>
-        </li>
-        {{/if}}
         </ul>
+        {{else}}
+        <ul>
+          <li>
+            <a href="/registration">
+              <i class="fa fa-home fa-2x"></i>
+              <span class="nav-text">Регистрация</span></a>
+          </li>
+
+          <li>
+            <a href="/login">
+              <i class="fa fa-home fa-2x"></i>
+              <span class="nav-text">Войти</span>
+            </a>
+          </li>
+        </ul>
+        {{/if}}
       </nav>
     </div>
 
