@@ -2,10 +2,10 @@
   "name": "chai",
   "version": "1.0.0",
   "description": "## Звонок от заказчика",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js --ignore sessions"
   },
   "repository": {
     "type": "git",
