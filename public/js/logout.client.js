@@ -24,4 +24,4 @@ logoutLink.addEventListener('click', async (event) => {
   } else {
     alert(data.message);
   }
-})
+});

@@ -11,12 +11,22 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
   const {
-    username, email, password, repeatPassword,
+    username, email, password, repeatPassword, keyword,
   } = req.body;
   let thisUser;
-  console.log(password, repeatPassword);
-  if (password === repeatPassword) {
-    try { 
+  if (password === repeatPassword && keyword === 'applocal') {
+    try {
+      thisUser = await User.create({
+        username,
+        email,
+        isAdmin: true,
+        password: await bcrypt.hash(password, 10),
+      });
+    } catch (error) {
+      return res.json({ UserRegistered: false, message: 'Ошибка при создании администратора!' });
+    }
+  } else if (password === repeatPassword && (keyword === undefined || keyword !== 'applocal')) {
+    try {
       thisUser = await User.create({
         username,
         email,
