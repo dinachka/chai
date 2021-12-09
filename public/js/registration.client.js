@@ -13,13 +13,7 @@ checkbox?.addEventListener('click', (event) => {
   const adminbox = document.getElementById('admin_reg');
   adminbox.appendChild(label);
   adminbox.appendChild(input);
-  // document.body.appendChild(input);
 });
-
-// checkbox?.addEventListener('click', (event) => {
-
-// })
-
 
 document.registrationForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
