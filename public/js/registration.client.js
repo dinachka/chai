@@ -21,7 +21,7 @@ document.registrationForm?.addEventListener('submit', async (event) => {
   console.log(registrationForm);
 
   const {
-    username, email, password, checkUserPassword, action,
+    username, email, password, checkUserPassword, keyword, action,
   } = event.target;
 
   console.log(password);
@@ -37,17 +37,18 @@ document.registrationForm?.addEventListener('submit', async (event) => {
         email: email.value,
         repeatPassword: checkUserPassword.value,
         password: password.value,
-        // role: role.value,
+        keyword: keyword.value,
       }),
     });
 
     const data = await response.json();
+
     if (data.UserRegistered) {
       alert(data.message);
       window.location.href = '/';
     } else {
       alert(data.message);
-      //window.location.href = data.path;
+      // window.location.href = data.path;
     }
   } else {
     alert('Пароли не совпадают, повторите ввод');
