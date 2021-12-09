@@ -25,9 +25,9 @@ router.post('/', async (req, res) => {
   }
 
   try {
-    // if (isUser) {
+    if (isUser) {
     isPassword = await bcrypt.compare(password, isUser.password);
-    // }
+    }
   } catch (err) {
     return res.json({ login: false, message: 'Ваш пароль неверный' });
   }

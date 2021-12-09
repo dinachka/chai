@@ -1,10 +1,14 @@
 const express = require('express');
+
 const router = express.Router();
 const { Chai } = require('../db/models');
 
 /* GET home page. */
 router.get('/', (req, res) => {
-  res.render('profile');
+  res.render('profile', {
+    user: req.session.user,
+  });
+
 });
 
 router.post('/', async (req, res) => {

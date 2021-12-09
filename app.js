@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
 const SessionFileStore = require('session-file-store')(expressSession);
 const bcrypt = require('bcrypt');
+
 const PORT = process.env.PORT ?? 3000;
 const app = express();
 app.set('view engine', 'hbs');
@@ -13,7 +14,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.listen(PORT, () => {
   console.log('Сервер работает :)', PORT);
 });
-
 
 const sessionConfig = {
   store: new SessionFileStore(),
@@ -49,4 +49,11 @@ app.use('/profile', profileRouter);
 app.use('/registration', registrationRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutLink);
+
+
+// req.session.user.isSession
+
+// app.get('/', (req, res) => {
+//   res.locals.isSession = req.session.user.isSession;
+// });
 
