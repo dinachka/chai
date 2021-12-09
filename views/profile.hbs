@@ -18,7 +18,7 @@
 </div>
 
 
-
+{{#if user.isAdmin}}
 <h2 style="text-align: center;">Личный кабинет администратора</h2>
 <div class="profile-container">
   <form name="addArticle" id="addArticle" class="items-form" action="/profile" method="POST" <div class="form-row"
@@ -29,11 +29,12 @@
     </div>
     <div class="form-group col-md-6">
       <label for="location">Место культивации</label><br>
-            <label for="location"> Широта<input type="text" name="latitude"></input></label>
-            <label for="location"> Долгота<input type="text" name="longitude"></input></label>
+      <label for="location"> Широта<input type="text" name="latitude"></input></label>
+      <label for="location"> Долгота<input type="text" name="longitude"></input></label>
 
-    <div id="map" style="width: 600px; height: 400px"></div>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=669f694a-7b76-4f0c-8c75-982434ccfb54&lang=ru_RU" type="text/javascript"></script>
+      <div id="map" style="width: 600px; height: 400px"></div>
+      <script src="https://api-maps.yandex.ru/2.1/?apikey=669f694a-7b76-4f0c-8c75-982434ccfb54&lang=ru_RU"
+        type="text/javascript"></script>
     </div>
 </div>
 <div class="form-row">
@@ -49,15 +50,15 @@
 <button type="submit" class="btn btn-primary">Добавить чай на карту</button>
 </form>
 
-{{!-- {{else}} --}}
+{{else}}
 <h2 style="text-align: center;">Личный кабинет пользователя</h2>
 <div class="profile-container">
-  {{!-- <div id="userData">
+  <div id="userData">
     <p>Имя пользователя: <b>{{customer.username}}</b></p>
     <p>E-mail: <b>{{customer.email}}</b></p>
     <p>Телефон: <b>{{customer.phone}}</b></p>
     <br>
-  </div> --}}
+  </div>
   <div id="comments">
     <p>{{#each comments}}</p>
     {{this.text}}
@@ -66,5 +67,5 @@
 </div>
 </div>
 
-   
-{{!-- {{/if}} --}}
+
+{{/if}}
