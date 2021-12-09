@@ -22,7 +22,7 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull:false,
       },
-      role: {
+      isAdmin: {
         type: Sequelize.TEXT,
         allowNull:true,
       },
