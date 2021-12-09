@@ -12,14 +12,14 @@
     <label for="checkUserPassword">Password: </label>
     <input type="password" placeholder="Повторите пароль" id="checkUserPassword" name="checkUserPassword">
 
-    {{!-- <div class="form-group">
-      <label for="role">Выберите между администратором и пользователем:
-        <select id="role" class="form-control" name="role" required>
-          <option value="admin">Администратор</option>
-          <option value="user">Пользователь</option><br>
-        </select>
-      </label>
-    </div> --}}
+    <label for="isAdmin">Админ: </label>
+    <input type="button" id="isAdmin">
+
+    <div id="admin_reg">
+      {{!-- <label for="keyWord">Введите ключевое слово</label>
+      <input type="text" name="keyword" id="keyWord"> --}}
+    </div>
+
     <button type="submit">Отправить!</button>
   </form>
 </div>
