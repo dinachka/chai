@@ -18,19 +18,14 @@ document.loginForm?.addEventListener('submit', async (event) => {
 
   const response = await fetch('/login', options);
   const data = await response.json();
+  console.log(data);
 
   if (data.login) {
-  // {
-  //   userMessage.innerText = 'Вы вошли успешно';
-  //   setTimeout(() => {
-  //     window.location.href = '/';
-  //   }, 2000);
-  // } else {
-  //   userMessage.innerText = data.message;
-  // }
-    alert(data.message);
-    window.location.href = '/';
+    userMessage.innerText = 'Вы вошли успешно';
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 2000);
   } else {
-    alert(data.message);
+    userMessage.innerText = data.message;
   }
 });
