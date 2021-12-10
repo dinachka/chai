@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/normalize.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/navstyle.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="/js/client.js" defer></script>
+  <script src="/js/registration.client.js" defer></script>
+  <script src="/js/login.client.js" defer></script>
+  <script src="/js/logout.client.js" defer></script>
+  <script src="/js/map.client.js" defer></script>
+  <script src="/js/profile.client.js" defer></script>
+  <title>{{title}}</title>
+</head>
+
+<body>
+  <div class="border_box">
+    <div class="container_nav">
+      <nav class="main-menu">
+        <ul>
+          <li>
+            <a href="/home">
+              <i class="fa fa-home fa-2x"></i>
+              <span class="nav-text">
+                Главная
+              </span>
+            </a>
+          </li>
+          {{#if isSession}}
+          <li>
+            <a href="/profile">
+              <i class="fa fa-home fa-2x"></i>
+              <span class="nav-text">
+                Личный кабинет
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/logout" id="logout-link">
+              <i class="fa fa-power-off fa-2x"></i>
+              <span class="nav-text">Logout</span></a>
+          </li>
+        </ul>
+        {{else}}
+        <ul>
+          <li>
+            <a href="/registration">
+              <i class="fa fa-home fa-2x"></i>
+              <span class="nav-text">Регистрация</span></a>
+          </li>
+
+          <li>
+            <a href="/login">
+              <i class="fa fa-home fa-2x"></i>
+              <span class="nav-text">Войти</span>
+            </a>
+          </li>
+        </ul>
+        {{/if}}
+      </nav>
+    </div>
+
+    <div class="container_body">
+      {{{body}}}
+    </div>
+  </div>
+</body>
+
+</html>

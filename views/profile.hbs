@@ -1,0 +1,88 @@
+{{#if isAdmin}}
+
+<div class="profile-container_div">
+  <div class="profile-container">
+    <h2 style="text-align: center;">Личный кабинет администратора</h2>
+    <form name="addArticle" id="addArticle" class="items-form" action="/profile" method="POST" <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="title">Название</label>
+        <input type="text" name="title" class="form-control" id="title" />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="location">Место культивации</label><br>
+        <label for="location"> Широта<input type="text" name="latitude" style="margin-left: 10px;"></input></label>
+        <label for="location"> Долгота<input type="text" name="longitude" style="margin-left: 10px;"></input></label>
+
+        <div id="map" style="width: 200%; height: 300px"></div>
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=669f694a-7b76-4f0c-8c75-982434ccfb54&lang=ru_RU"
+          type="text/javascript"></script>
+      </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="image">Ссылка на фотографию чая</label>
+      <input type="text" name="image" class="form-control" id="image" />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="description">Описание</label>
+      <input type="text" name="description" class="form-control" id="description" />
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Добавить чай на карту</button>
+  </form>
+</div>
+
+<div id="chai-name-container">
+  {{#each chai}}
+
+  <div class="card">
+    {{!-- <img src="..." class="card-img-top" alt="..."> --}}
+    <div class="card-body">
+      <h5 class="card-title">{{this.title}}</h5>
+    </div>
+    <div class="card-body">
+      <button data-delBtn_id="{{this.id}}" class="deleteBtn btn btn-outline-danger" type="button">Удалить</button>
+    </div>
+  </div>
+
+  {{/each}}
+</div>
+
+{{else}}
+
+<div class="profile-container_div ">
+  <div class="profile-container">
+    <h2 style="text-align: center;">Личный кабинет пользователя</h2>
+    <div id="userData">
+
+      <div class="userData_box">
+        <p>Имя пользователя: </p>
+        <input type="text" value="{{username}}" name="email" class="profile_input">
+        <button type="submit" class="btn btn-outline-dark profile_btn" id="chg_name">Изменить имя</button>
+      </div>
+
+      <div class="userData_box">
+        <p>E-mail: </p>
+        <p><b>{{email}}</b></p>
+        <p>*изменение email невозможно</p>
+        {{!-- <input type="text" value="{{email}}" name="email" class="profile_input">
+        <button type="submit" class="btn btn-outline-dark profile_btn" id="chg_email">Изменить E-mail</button> --}}
+
+      </div>
+
+      <br>
+    </div>
+    <div id="comments">
+      <p>{{#each comments}}</p>
+      {{this.text}}
+      {{/each}}
+    </div>
+  </div>
+</div>
+</div>
+
+
+{{/if}}
+
+
+

@@ -1,0 +1,23 @@
+<div class="registration_box">
+  <form action="/registration" name="registrationForm" method="post" class="registration_box_form">
+    <label class="reg_log_label" for="userName">Логин: </label>
+    <input class="alert alert-success" required type="text" placeholder="Введи свой логин" id="userName"
+      name="username">
+
+    <label class="reg_log_label" for="userEmail">Email: </label>
+    <input class="alert alert-success" required type="email" placeholder="Введи свою почту" id="userEmail" name="email">
+
+    <label class="reg_log_label" for="userPassword">Password: </label>
+    <input class="alert alert-success" required type="password" placeholder="Введи пароль" id="userPassword"
+      name="password" minlength="5">
+
+    <label class="reg_log_label" for="checkUserPassword">Password: </label>
+    <input class="alert alert-success" type="password" placeholder="Повторите пароль" id="checkUserPassword"
+      name="checkUserPassword">
+
+    <label class="reg_log_label" for="keyWord">Введите ключевое слово </label>
+    <input class="alert alert-success" type="password" placeholder="если админ" id="keyWord" name="keyword">
+
+    <button class="reg_btn btn btn-outline-dark profile_btn" type="submit">Отправить!</button>
+  </form>
+</div>
