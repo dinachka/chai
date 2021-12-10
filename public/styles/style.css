@@ -9,7 +9,7 @@
   grid-template-columns: 3fr 8fr 2fr;
   width: 100vw;
   height: 100vh;
-  background-size: contain;
+  background-repeat: repeat;
   background-image: url('https://st2.depositphotos.com/5982772/9634/v/600/depositphotos_96342270-stock-illustration-tea-leaves-botanical-style-seamless.jpg');
 }
 
