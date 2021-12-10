@@ -1,7 +1,7 @@
 const arrGlobalCoordinates = [];
 
-window.addEventListener('load', async (event) => {
-  const response = await fetch('http://localhost:3000/', {
+window.addEventListener('load', async (event) => { // фетч на извлечение из бд координат
+  const response = await fetch('http://localhost:3000/home', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -20,12 +20,14 @@ window.addEventListener('load', async (event) => {
 
 ymaps.ready(init);
 function init() {
-  const myMap = new ymaps.Map("map", {
+  const myMap = new ymaps.Map("map", { // отрисовка пустой карты 
     center: [35.76, 37.64],
     zoom: 2,
   });
+
   myMap.events.add('click', (event) => {
     const clickCoords = event.get('coords');
+
 
     function getAddress(coords) {
       myPlacemark.properties.set('iconCaption', 'поиск...');
@@ -64,5 +66,16 @@ function init() {
     document.addArticle.latitude.value = clickCoords[0];
     document.addArticle.longitude.value = clickCoords[1];
   });
+
+  const myCollection = new ymaps.GeoObjectCollection({}, {
+    preset: 'islands#redIcon',
+    draggable: false,
+  });
+
+  arrGlobalCoordinates.forEach((points) => {
+    myCollection.add(new ymaps.Placemark(points.coords));
+  });
+
+  myMap.geoObjects.add(myCollection);
 };
 
