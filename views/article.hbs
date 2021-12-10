@@ -1,0 +1,20 @@
+{{#if chai }}
+<div class="tea_box">
+  <div class="tea_info">
+    <div id="tea_title">
+      <h2>{{chai.title}}</h2>
+    </div>
+    <div id="tea_description">{{chai.description}}</div>
+  </div>
+  <div id="tea_img">
+    <img src="{{chai.image}}" style="height: 200px;">
+  </div>
+</div>
+{{else}}
+
+<div class="tea_box">
+  <p>Пока такого чая нет:(</p>
+  <p>Но скоро будет :)</p>
+</div>
+
+{{/if}}

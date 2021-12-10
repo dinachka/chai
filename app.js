@@ -22,7 +22,7 @@ const sessionConfig = {
   resave: false,
   saveUninitialized: false,
   cookie: {
-    maxAge: 1000 * 60 * 60 * 24 * 14, // 14 days
+    maxAge: 1000 * 60 * 60 * 24 * 14,
     httpOnly: true,
   },
 };
@@ -41,7 +41,6 @@ const registrationRouter = require('./routes/registration');
 const loginRouter = require('./routes/login');
 const logoutLink = require('./routes/logout');
 const middlewareSession = require('./middlewares/middlewareSession')
-// const Router = require('./routes/');
 
 app.use(middlewareSession);
 

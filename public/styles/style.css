@@ -1,6 +1,6 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap'); */
 
-body {
+/* body {
   font-family: 'Montserrat', sans-serif;
 } */
 
@@ -9,6 +9,7 @@ body {
   grid-template-columns: 3fr 8fr 2fr;
   width: 100vw;
   height: 100vh;
+  background-size: contain;
   background-image: url('https://st2.depositphotos.com/5982772/9634/v/600/depositphotos_96342270-stock-illustration-tea-leaves-botanical-style-seamless.jpg');
 }
 
@@ -20,9 +21,17 @@ body {
   padding: 5% 10% 5% 10%;
 }
 
+.tea_box {
+  margin-top: 5%;
+  background-color: rgba(182, 196, 119, 0.973);
+  padding: 5% 10% 5% 10%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
 .profile-container_div {
   background-color: rgba(182, 196, 119, 0.973);
-  padding: 1% 3% 1% 3%;
+  padding: 5% 3% 1% 3%;
 }
 
 .welcome_box h1 {
@@ -41,4 +50,30 @@ body {
   display: flex;
   align-items: center;
   font-size: 16pt;
+}
+
+#userData {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.userData_box {
+  padding: 3%;
+  width: 300px;
+  background-color: #9dad6efd;
+}
+
+.profile_btn {
+  width: 100%;
+}
+
+.profile_input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px 0 5px 5px;
+  width: 100%;
+  background-color: rgb(245, 237, 210);
+  border-radius: 5px;
+  border: none;
 }

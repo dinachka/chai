@@ -2,13 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 const { Chai } = require('../db/models');
-
-/* GET home page. */
-// router.get('/', (req, res) => {
-//   res.render('profile', {
-//     user: req.session.user,
-//   });
-// });
+const { User } = require('../db/models');
 
 router.get('/', (req, res) => {
   res.render('profile');
@@ -35,5 +29,16 @@ router.post('/', async (req, res) => {
     return res.json({ chaiAdded: false, message: 'не удалось добавить чай в базу данных' });
   }
 });
+
+
+// router.put('/', async (req, res) => {
+//   const { username } = req.body;
+//   try {
+//     await User.findOne({ raw: true });
+
+//   } catch (error) {
+//     return res.json({ message: 'не удалось изменить Ваше имя' });
+//   }
+// })
 
 module.exports = router;

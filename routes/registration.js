@@ -45,7 +45,6 @@ router.post('/', async (req, res) => {
       id: thisUser.id,
       username,
       email,
-      isAdmin,
       isSession: true,
     };
   }

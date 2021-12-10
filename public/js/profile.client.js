@@ -1,5 +1,5 @@
 const addArticleForm = document.getElementById('addArticle');
-console.log(addArticleForm);
+// console.log(addArticleForm);
 addArticleForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
   const {
@@ -28,3 +28,23 @@ addArticleForm?.addEventListener('submit', async (event) => {
     alert(jsonData.message);
   }
 });
+
+// const chgName = document.getElementById('chg_name');
+
+// document.chgName.addEventListener('submit', async (event) => {
+//   event.preventDefault()
+//   const { username } = event.target;
+
+//   const response = await fetch(action, {
+//     method: 'put',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({
+//       username: username.value
+//     }),
+//   });
+
+//   const jsonData = await response.json();
+
+// })
