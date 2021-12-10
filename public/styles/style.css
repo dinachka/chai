@@ -21,6 +21,13 @@
   padding: 5% 10% 5% 10%;
 }
 
+.container_app {
+  margin-top: 20px;
+  background-color: rgba(182, 196, 119, 0.973);
+  height: 150px;
+  padding: 3% 3% 1% 3%;
+}
+
 .tea_box {
   margin-top: 5%;
   background-color: rgba(182, 196, 119, 0.973);
@@ -79,20 +86,28 @@
 }
 
 .comment {
-	display: block;
-	transition: all 1s;
+  display: block;
+  transition: all 1s;
 }
+
 .commentClicked {
-	min-height: 0px;
-	border: 1px solid #eee;
-	border-radius: 5px;
-	padding: 5px 10px
+  min-height: 0px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 5px 10px
 }
 
 .container {
-	max-width: 640px;
-	margin: 30px auto;
-	background: #fff;
-	border-radius: 8px;
-	padding: 20px;
+  max-width: 640px;
+  margin: 30px auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.container_app_input {
+  background-color: rgb(245, 237, 210);
+  border-radius: 5px;
+  width: 100%;
+  resize: none;
 }
