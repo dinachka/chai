@@ -10,21 +10,21 @@ module.exports = {
       },
       username: {
         type: Sequelize.TEXT,
-        allowNull:false,
-        unique:true
+        allowNull: false,
+        unique: true
       },
       email: {
         type: Sequelize.TEXT,
-        allowNull:false,
-        unique:true
+        allowNull: false,
+        unique: true
       },
       password: {
         type: Sequelize.TEXT,
-        allowNull:false,
+        allowNull: false,
       },
       isAdmin: {
-        type: Sequelize.TEXT,
-        allowNull:true,
+        type: Sequelize.BOOLEAN,
+        allowNull: true,
       },
       createdAt: {
         allowNull: false,
