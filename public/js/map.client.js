@@ -77,7 +77,7 @@ function init() {
 
   arrGlobalCoordinates.forEach((points) => {
     const placeMark = new ymaps.Placemark(points.coords, {
-      hintContent: points.titles;
+      hintContent: points.titles
     });
     myCollection.add(placeMark);
     placeMark.events.add('click', () => {
