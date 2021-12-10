@@ -19,50 +19,55 @@
 
 
 {{#if isAdmin}}
-<h2 style="text-align: center;">Личный кабинет администратора</h2>
-<div class="profile-container">
-  <form name="addArticle" id="addArticle" class="items-form" action="/profile" method="POST" <div class="form-row"
-    style="margin-left: 30%; margin-bottom: 5%;">
-    <div class="form-group col-md-6">
-      <label for="title">Название</label>
-      <input type="text" name="title" class="form-control" id="title" />
-    </div>
-    <div class="form-group col-md-6">
-      <label for="location">Место культивации</label><br>
-      <label for="location"> Широта<input type="text" name="latitude"></input></label>
-      <label for="location"> Долгота<input type="text" name="longitude"></input></label>
 
-      <div id="map" style="width: 600px; height: 400px"></div>
-      <script src="https://api-maps.yandex.ru/2.1/?apikey=669f694a-7b76-4f0c-8c75-982434ccfb54&lang=ru_RU"
-        type="text/javascript"></script>
+<div class="profile-container_div">
+  <div class="profile-container">
+    <h2 style="text-align: center;">Личный кабинет администратора</h2>
+    <form name="addArticle" id="addArticle" class="items-form" action="/profile" method="POST" <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="title">Название</label>
+        <input type="text" name="title" class="form-control" id="title" />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="location">Место культивации</label><br>
+        <label for="location"> Широта<input type="text" name="latitude"></input></label>
+        <label for="location"> Долгота<input type="text" name="longitude"></input></label>
+
+        <div id="map" style="width: 600px; height: 400px"></div>
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=669f694a-7b76-4f0c-8c75-982434ccfb54&lang=ru_RU"
+          type="text/javascript"></script>
+      </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="image">Фото</label>
+      <input type="file" name="image" class="form-control" id="image" />
     </div>
-</div>
-<div class="form-row">
-  <div class="form-group col-md-6">
-    <label for="image">Фото</label>
-    <input type="file" name="image" class="form-control" id="image" />
+    <div class="form-group col-md-6">
+      <label for="description">Описание</label>
+      <input type="text" name="description" class="form-control" id="description" />
+    </div>
   </div>
-  <div class="form-group col-md-6">
-    <label for="description">Описание</label>
-    <input type="text" name="description" class="form-control" id="description" />
-  </div>
+  <button type="submit" class="btn btn-primary">Добавить чай на карту</button>
+  </form>
 </div>
-<button type="submit" class="btn btn-primary">Добавить чай на карту</button>
-</form>
 
 {{else}}
-<h2 style="text-align: center;">Личный кабинет пользователя</h2>
-<div class="profile-container">
-  <div id="userData">
-    <p>Имя пользователя: <b>{{customer.username}}</b></p>
-    <p>E-mail: <b>{{customer.email}}</b></p>
-    <p>Телефон: <b>{{customer.phone}}</b></p>
-    <br>
-  </div>
-  <div id="comments">
-    <p>{{#each comments}}</p>
-    {{this.text}}
-    {{/each}}
+
+<div class="profile-container_div ">
+  <div class="profile-container">
+    <h2 style="text-align: center;">Личный кабинет пользователя</h2>
+    <div id="userData">
+      <p>Имя пользователя: <b>{{username}}</b></p>
+      <p>E-mail: <b>{{email}}</b></p>
+      {{!-- <p>Телефон: <b>{{customer.phone}}</b></p> --}}
+      <br>
+    </div>
+    <div id="comments">
+      <p>{{#each comments}}</p>
+      {{this.text}}
+      {{/each}}
+    </div>
   </div>
 </div>
 </div>
