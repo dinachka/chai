@@ -16,7 +16,6 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   const coordinates = await Chai.findAll({ raw: true });
   res.json({ coordinates });
-
 });
 
 // router.get('/', (req, res) => {
