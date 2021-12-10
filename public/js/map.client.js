@@ -8,26 +8,26 @@ window.addEventListener('load', async (event) => { // фетч на извлеч
     },
   });
   const data = await response.json();
-  console.log(data);
+  // console.log(data);
   data.coordinates.forEach((element) => {
     const obj = {};
     obj.coords = [+element.latitude, +element.longitude];
+    obj.titles = element.title;
+    obj.id = element.id;
     arrGlobalCoordinates.push(obj);
   });
-  console.log(arrGlobalCoordinates);
+  // console.log(arrGlobalCoordinates);
 });
-
 
 ymaps.ready(init);
 function init() {
-  const myMap = new ymaps.Map("map", { // отрисовка пустой карты 
+  const myMap = new ymaps.Map('map', { // отрисовка пустой карты
     center: [35.76, 37.64],
     zoom: 2,
   });
 
   myMap.events.add('click', (event) => {
     const clickCoords = event.get('coords');
-
 
     function getAddress(coords) {
       myPlacemark.properties.set('iconCaption', 'поиск...');
@@ -49,7 +49,8 @@ function init() {
       });
     }
 
-    function createPlacemark(coords) {
+    function createPlacemark(coords) { // определяет координаты и
+      // присваивает долготу и широту dom элементам
       return new ymaps.Placemark(coords, {
         iconCaption: 'поиск...',
       }, {
@@ -68,14 +69,37 @@ function init() {
   });
 
   const myCollection = new ymaps.GeoObjectCollection({}, {
-    preset: 'islands#redIcon',
+    // отрисовка точек на главной странице
+    preset: 'islands#yellowGlyphCircleIcon',
+    iconGlyph: 'glass',
     draggable: false,
   });
 
   arrGlobalCoordinates.forEach((points) => {
-    myCollection.add(new ymaps.Placemark(points.coords));
+    const placeMark = new ymaps.Placemark(points.coords, {
+      hintContent: points.titles;
+    });
+    myCollection.add(placeMark);
+    placeMark.events.add('click', () => {
+     window.location.href = `/article/${points.id}`;
+    })
+    // myCollection.events.add('click', () => {
+    //   arrGlobalCoordinates.map((points) => {
+    //     window.location.href = `/article/${points.id}`;
+    //     console.log(points.id);
+    //   });
+    // });
   });
 
   myMap.geoObjects.add(myCollection);
-};
 
+
+  // myCollection.events.add('click', (e) => {
+  //   const objectId = e.get('objectId');
+  //   console.log(objectId);
+  // });
+
+  console.log(myCollection);
+  console.log(arrGlobalCoordinates);
+
+}
