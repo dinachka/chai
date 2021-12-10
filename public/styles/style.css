@@ -1,6 +1,21 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+} */
+
 .border_box {
   display: grid;
   grid-template-columns: 3fr 8fr 2fr;
+}
+
+.welcome_box {
+  margin-top: 20%;
+}
+
+.welcome_box h1 {
+  display: flex;
+  justify-content: center;
 }
 
 .login_box,
@@ -13,4 +28,10 @@
 .registration_box_form {
   display: grid;
   grid-template-columns: 2fr 5fr;
+}
+
+.reg_log_label {
+  display: flex;
+  align-items: center;
+  font-size: 16pt;
 }

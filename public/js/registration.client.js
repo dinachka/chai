@@ -1,19 +1,20 @@
 const checkbox = document.getElementById('isAdmin');
 
-const label = document.createElement('label');
-label.innerText = 'Введите ключевое слово';
-label.for = 'keyWord';
+// const label = document.createElement('label');
+// label.innerText = 'Введите ключевое слово';
+// label.for = 'keyWord';
+// label.className = 'reg_log_label'
 
-const input = document.createElement('input');
-input.id = 'keyWord';
-input.type = 'text';
-input.name = 'keyword';
+// const input = document.createElement('input');
+// input.id = 'keyWord';
+// input.type = 'text';
+// input.name = 'keyword';
 
-checkbox?.addEventListener('click', (event) => {
-  const adminbox = document.getElementById('admin_reg');
-  adminbox.appendChild(label);
-  adminbox.appendChild(input);
-});
+// checkbox?.addEventListener('click', (event) => {
+//   const adminbox = document.getElementById('admin_reg');
+//   adminbox.appendChild(label);
+//   adminbox.appendChild(input);
+// });
 
 document.registrationForm?.addEventListener('submit', async (event) => {
   event.preventDefault();

@@ -1,22 +1,28 @@
 <div class="registration_box">
   <form action="/registration" name="registrationForm" method="post" class="registration_box_form">
-    <label for="userName">Логин: </label>
-    <input required type="text" placeholder="Введи свой логин" id="userName" name="username">
+    <label class="reg_log_label" for="userName">Логин: </label>
+    <input class="alert alert-success" required type="text" placeholder="Введи свой логин" id="userName"
+      name="username">
 
-    <label for="userEmail">Email: </label>
-    <input required type="email" placeholder="Введи свою почту" id="userEmail" name="email">
+    <label class="reg_log_label" for="userEmail">Email: </label>
+    <input class="alert alert-success" required type="email" placeholder="Введи свою почту" id="userEmail" name="email">
 
-    <label for="userPassword">Password: </label>
-    <input required type="password" placeholder="Введи пароль" id="userPassword" name="password" minlength="5">
+    <label class="reg_log_label" for="userPassword">Password: </label>
+    <input class="alert alert-success" required type="password" placeholder="Введи пароль" id="userPassword"
+      name="password" minlength="5">
 
-    <label for="checkUserPassword">Password: </label>
-    <input type="password" placeholder="Повторите пароль" id="checkUserPassword" name="checkUserPassword">
+    <label class="reg_log_label" for="checkUserPassword">Password: </label>
+    <input class="alert alert-success" type="password" placeholder="Повторите пароль" id="checkUserPassword"
+      name="checkUserPassword">
 
-    <label for="isAdmin">Админ: </label>
-    <input type="button" id="isAdmin" value="Проверить">
+    {{!-- <label class="reg_log_label" for="isAdmin">Админ: </label>
+    <input type="button" id="isAdmin" value="Проверить"> --}}
+    {{!-- <div id="admin_reg"></div> --}}
 
-    <div id="admin_reg"></div>
+    <label class="reg_log_label" for="keyWord">Введите ключевое слово </label>
+    <input class="alert alert-success" required type="password" placeholder="если админ" id="keyWord" name="keyword">
 
-    <button type="submit">Отправить!</button>
+
+    <button class="reg_btn" type="submit">Отправить!</button>
   </form>
 </div>

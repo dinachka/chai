@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
 
   try {
     if (isUser) {
-    isPassword = await bcrypt.compare(password, isUser.password);
+      isPassword = await bcrypt.compare(password, isUser.password);
     }
   } catch (err) {
     return res.json({ login: false, message: 'Ваш пароль неверный' });
@@ -42,6 +42,7 @@ router.post('/', async (req, res) => {
       username: isUser.username,
       email: isUser.email,
       isSession: true,
+      isAdmin: isUser.isAdmin,
     };
     return res
       .status(200)
