@@ -22,7 +22,7 @@ const sessionConfig = {
   resave: false,
   saveUninitialized: false,
   cookie: {
-    maxAge: 1000 * 60 * 60 * 24 * 14, // 14 days
+    maxAge: 1000 * 60 * 60 * 24 * 14,
     httpOnly: true,
   },
 };
@@ -40,8 +40,7 @@ const profileRouter = require('./routes/profile');
 const registrationRouter = require('./routes/registration');
 const loginRouter = require('./routes/login');
 const logoutLink = require('./routes/logout');
-const middlewareSession = require('./middlewares/middlewareSession')
-// const Router = require('./routes/');
+const middlewareSession = require('./middlewares/middlewareSession');
 
 app.use(middlewareSession);
 
@@ -52,11 +51,3 @@ app.use('/profile', profileRouter);
 app.use('/registration', registrationRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutLink);
-
-
-// req.session.user.isSession
-
-// app.get('/', (req, res) => {
-//   res.locals.isSession = req.session.user.isSession;
-// });
-
