@@ -46,6 +46,7 @@ router.post('/', async (req, res) => {
       username,
       email,
       isSession: true,
+      isAdmin,
     };
   }
   res.json({ UserRegistered: true, message: 'Регистрация успешно завершена!' });
