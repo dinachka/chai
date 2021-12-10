@@ -14,6 +14,7 @@ router.post('/', async (req, res) => {
     username, email, password, repeatPassword, keyword,
   } = req.body;
   let thisUser;
+  let thisAdmin;
   if (password === repeatPassword && keyword === 'applocal') {
     try {
       thisUser = await User.create({
@@ -46,7 +47,15 @@ router.post('/', async (req, res) => {
       username,
       email,
       isSession: true,
-      isAdmin,
+      isAdmin: false,
+    };
+  } else if (thisAdmin) {
+    req.session.user = {
+      id: thisUser.id,
+      username,
+      email,
+      isSession: true,
+      isAdmin: true,
     };
   }
   res.json({ UserRegistered: true, message: 'Регистрация успешно завершена!' });

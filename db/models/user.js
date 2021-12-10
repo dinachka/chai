@@ -14,16 +14,16 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(Comments, {
         foreignKey: 'userId',
       }),
-      User.hasMany(Chai, {
-        foreignKey: 'userId',
-      });
+        User.hasMany(Chai, {
+          foreignKey: 'userId',
+        });
     }
   }
   User.init({
     username: DataTypes.TEXT,
     email: DataTypes.TEXT,
     password: DataTypes.TEXT,
-    isAdmin: DataTypes.TEXT,
+    isAdmin: DataTypes.BOOLEAN,
   }, {
     sequelize,
     modelName: 'User',

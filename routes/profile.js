@@ -2,10 +2,13 @@ const express = require('express');
 
 const router = express.Router();
 const { Chai } = require('../db/models');
-const { User } = require('../db/models');
 
 router.get('/', (req, res) => {
-  res.render('profile');
+  const { isAdmin } = req.session.user;
+  console.log(req.session.user);
+  res.render('profile', {
+    isAdmin,
+  });
 });
 
 router.post('/', async (req, res) => {
@@ -30,15 +33,5 @@ router.post('/', async (req, res) => {
   }
 });
 
-
-// router.put('/', async (req, res) => {
-//   const { username } = req.body;
-//   try {
-//     await User.findOne({ raw: true });
-
-//   } catch (error) {
-//     return res.json({ message: 'не удалось изменить Ваше имя' });
-//   }
-// })
 
 module.exports = router;
