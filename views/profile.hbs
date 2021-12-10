@@ -1,20 +1,4 @@
-<div id="chai-name-container">
 
-  {{#each chai}}
-
-  <div class="card">
-    {{!-- <img src="..." class="card-img-top" alt="..."> --}}
-    <div class="card-body">
-      <h5 class="card-title">{{this.title}}</h5>
-    </div>
-    <div class="card-body">
-      <button data-delBtn_id="{{this.id}}" class="deleteBtn btn btn-outline-danger" type="button">Удалить</button>
-    </div>
-  </div>
-
-  {{/each}}
-
-</div>
 
 
 {{#if isAdmin}}
@@ -50,7 +34,23 @@
   <button type="submit" class="btn btn-primary">Добавить чай на карту</button>
   </form>
 </div>
+<div id="chai-name-container">
 
+  {{#each chai}}
+
+  <div class="card">
+    {{!-- <img src="..." class="card-img-top" alt="..."> --}}
+    <div class="card-body">
+      <h5 class="card-title">{{this.title}}</h5>
+    </div>
+    <div class="card-body">
+      <button data-delBtn_id="{{this.id}}" class="deleteBtn btn btn-outline-danger" type="button">Удалить</button>
+    </div>
+  </div>
+
+  {{/each}}
+
+</div>
 {{else}}
 
 <div class="profile-container_div ">
