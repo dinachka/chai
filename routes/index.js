@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
   const coordinates = await Chai.findAll({ raw: true });
   res.render('index', {
     coordinates,
-    user: req.session.user,
+    // user: req.session.user,
   });
 });
 

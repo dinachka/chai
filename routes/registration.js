@@ -30,6 +30,7 @@ router.post('/', async (req, res) => {
       thisUser = await User.create({
         username,
         email,
+        isAdmin: false,
         password: await bcrypt.hash(password, 10),
       });
     } catch (error) {
@@ -44,6 +45,7 @@ router.post('/', async (req, res) => {
       id: thisUser.id,
       username,
       email,
+      isAdmin,
       isSession: true,
     };
   }

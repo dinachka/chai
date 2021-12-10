@@ -40,7 +40,10 @@ const profileRouter = require('./routes/profile');
 const registrationRouter = require('./routes/registration');
 const loginRouter = require('./routes/login');
 const logoutLink = require('./routes/logout');
+const middlewareSession = require('./middlewares/middlewareSession')
 // const Router = require('./routes/');
+
+app.use(middlewareSession);
 
 app.use('/home', indexRouter);
 app.use('/article', articleRouter);

@@ -4,11 +4,14 @@ const router = express.Router();
 const { Chai } = require('../db/models');
 
 /* GET home page. */
-router.get('/', (req, res) => {
-  res.render('profile', {
-    user: req.session.user,
-  });
+// router.get('/', (req, res) => {
+//   res.render('profile', {
+//     user: req.session.user,
+//   });
+// });
 
+router.get('/', (req, res) => {
+  res.render('profile');
 });
 
 router.post('/', async (req, res) => {
@@ -27,7 +30,7 @@ router.post('/', async (req, res) => {
       image,
       userId: currentUser.id,
     });
-   res.json({ chaiAdded: true, message: 'чай успешно добавлен' });
+    res.json({ chaiAdded: true, message: 'чай успешно добавлен' });
   } catch (err) {
     return res.json({ chaiAdded: false, message: 'не удалось добавить чай в базу данных' });
   }
